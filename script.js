@@ -12,8 +12,15 @@ const getSum = () => {
         total += parseFloat(price.textContent);
     });
 
+    // Remove existing total row if present
+    const existingTotalRow = document.getElementById('ans');
+    if (existingTotalRow) {
+        existingTotalRow.remove();
+    }
+
     // Create a new row
     const newRow = document.createElement("tr");
+    newRow.id = 'ans';
 
     // Create a new cell with the total price
     const totalCell = document.createElement("td");
